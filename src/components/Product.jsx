@@ -8,7 +8,7 @@ const Product = ({ product }) => {
                     className="w-full block"
                 />
             </div>
-            <div className="product-texts flex flex-col gap-3">
+            <div className="product-texts p-5 flex flex-col gap-3">
                 <h3 className="product-name text-xl h-24">{product.name}</h3>
                 <p className="product-desc text-gray-400 h-28">
                     {product.description}

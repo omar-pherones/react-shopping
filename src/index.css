@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    overflow-x: hidden !important;
+    font-family: 'Cabin', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 10%;
+    background-color: rgb(142, 45, 226);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff1f2;
+}
+
+/* Navbar start here  */
+.nav {
+    background-color: #212121;
+}
+
+.nav .tronics {
+    color: rgb(142, 45, 226);
+}
+
+.nav .cart-count {
+    background: rgb(142, 45, 226);
+    padding: 2.5px;
+    line-height: 1;
+    border-radius: 10px;
+}
+
+.sticky-header {
+    background-color: #212121;
+    color: white;
+    position: sticky;
+    top: 0;
+    transform: translateY(-70px);
+    animation: StickyHeader 0.3s ease forwards;
+    z-index: 98;
+}
+
+@keyframes StickyHeader {
+    0% {
+        transform: translateY(-70px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Slider */
+.slider {
+    height: calc(100vh - 5rem);
+    width: 500vw;
+    display: flex;
+    transition: 1s ease;
+}
+
+.slide {
+    width: 100vw;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Slide */
+.slide-btn {
+    position: relative;
+}
+
+.slide-btn::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f97316;
+    width: 0%;
+    transition: 0.3s ease;
+}
+
+.slide-btn:hover::before {
+    width: 100%;
+}
+
+.camera {
+    background-image: linear-gradient(
+            to right,
+            rgba(107, 114, 128, 0.75),
+            rgba(17, 24, 39, 0.75)
+        ),
+        url('https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/camera_choprq.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tv {
+    background-image: linear-gradient(
+            to right,
+            rgba(107, 114, 128, 0.75),
+            rgba(17, 24, 39, 0.75)
+        ),
+        url('https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/tv_xdvusm.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.console {
+    background-image: linear-gradient(
+            to right,
+            rgba(107, 114, 128, 0.75),
+            rgba(17, 24, 39, 0.75)
+        ),
+        url('https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/console_wn0qr4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headphones {
+    background-image: linear-gradient(
+            to right,
+            rgba(107, 114, 128, 0.75),
+            rgba(17, 24, 39, 0.75)
+        ),
+        url('https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/headphones_rtc8rw.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.smart-watches {
+    background-image: linear-gradient(
+            to right,
+            rgba(107, 114, 128, 0.75),
+            rgba(17, 24, 39, 0.75)
+        ),
+        url('https://res.cloudinary.com/dy28teazb/image/upload/v1668165872/React%20Shopping/Categories/smart-watches_rvhpfa.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* newsletter-section  */
+.newsletter-section {
+    background: #f9f9f9 url(/src/assests/newsletter-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

@@ -14,13 +14,19 @@ const App = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const getProductsFromApi = async () => {
-        const res = await fetch(
-            'https://eager-sable-airedale.glitch.me/products'
-        );
-        if (!res.ok) throw new error('Somthing went wrong');
-        const data = await res.json();
-        if (data?.result === 0) throw new error('Somthing went wrong');
-        setProducts(data);
+        try {
+            setLoading(true);
+            const res = await fetch(
+                'https://eager-sable-airedale.glitch.me/products'
+            );
+            if (!res.ok) throw new error('Somthing went wrong');
+            const data = await res.json();
+            if (data?.result === 0) throw new error('Somthing went wrong');
+            setProducts(data);
+            setLoading(false);
+        } catch (error) {
+            setError(error.message);
+        }
     };
     useEffect(() => {
         getProductsFromApi();

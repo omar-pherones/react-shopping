@@ -1,9 +1,11 @@
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Newsletter from './components/Newsletter';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import { useEffect, useState } from 'react';
 import Products from './pages/Products';
+import NotFound from './pages/NotFound';
 // import Products from './pages/Products';
 // import Cart from './pages/Cart';
 // import NotFound from './pages/NotFound';
@@ -25,7 +27,7 @@ const App = () => {
     }, []);
     return (
         <BrowserRouter>
-            <div className="app min-h-screen bg-gray-50 text-gray-700">
+            <div className="app  bg-gray-50 text-gray-700">
                 <Navbar />
                 <Routes>
                     <Route
@@ -48,8 +50,10 @@ const App = () => {
                             />
                         }
                     />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
+            <Newsletter />
             <Footer />
         </BrowserRouter>
     );

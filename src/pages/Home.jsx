@@ -3,7 +3,6 @@ import Slider from '../components/Slider';
 import Products from './Products';
 
 const Home = ({ data, loading, error }) => {
-    console.log(data);
     return (
         <>
             <Slider />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Products from '../pages/Products';
-const Categories = ({ data, loading, error }) => {
+const Categories = ({ data, status }) => {
     const [categoryName, setCategoryName] = useState('');
     const [categorised, setCategorised] = useState('');
 
@@ -55,8 +55,7 @@ const Categories = ({ data, loading, error }) => {
             {categorised && (
                 <Products
                     categoryName={categoryName}
-                    loading={loading}
-                    error={error}
+                    status={status}
                     data={categorised}
                 />
             )}

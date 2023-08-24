@@ -31,20 +31,10 @@ React-Shopping is an online ecommerce store front-end implementation built using
 2. Navigate to the project directory:
    `cd react-shopping`
 3. Install the dependencies using your preferred package manager:
-   `
-   npm install
-
-# or
-
-yarn install`
-4. Start the development server:`
-npm start
-
-# or
-
-yarn start
-`
-5.Open your web browser and visit` http://localhost:3000` to see the application in action.
+   ` npm install # or yarn install`
+4. Start the development server:
+   ` npm start # or yarn start`
+5. Open your web browser and visit` http://localhost:3000` to see the application in action.
 
 ## Conclusion
 

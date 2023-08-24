@@ -6,13 +6,16 @@ import {
     addToCart,
     clearCartItems,
     decreaseCart,
+    getSubtotal,
     removeFromCart,
 } from '../features/products/cartSlice';
 import { currencyFormatter } from '../utitls/currencyFormatter';
 
 const Cart = () => {
+    const { cartItems: data, cartTotalAmount: cartSubTotal } = useSelector(
+        (state) => state.cart
+    );
     const location = useLocation();
-    const { cartItems: data } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
     const handleRemoveFromCart = (product) => {
         dispatch(removeFromCart(product));
@@ -23,6 +26,9 @@ const Cart = () => {
     const handleIncressQuantity = (product) => {
         dispatch(addToCart(product));
     };
+    useEffect(() => {
+        dispatch(getSubtotal());
+    }, [data, dispatch]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -134,7 +140,7 @@ const Cart = () => {
                             <div className="top flex justify-between w-full text-2xl font-medium">
                                 <span className="text-sky-500">Subtotal</span>
                                 <span className="text-rose-500">
-                                    {currencyFormatter(343)}
+                                    {currencyFormatter(cartSubTotal)}
                                 </span>
                             </div>
                             <p className="text-gray-400">

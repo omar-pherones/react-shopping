@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa';
 const Newsletter = () => {
     return (
-        <div className="newsletter-section  h-[400px] flex items-center mt-5">
+        <div className="newsletter-section  h-[400px] flex items-center">
             <div className="container mx-auto  flex items-center flex-col text-center">
                 <span className="small-text  uppercase text-black/50 text-2xl mb-3">
                     Newsletter

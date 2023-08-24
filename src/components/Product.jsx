@@ -1,6 +1,14 @@
 import { currencyFormatter } from '../utitls/currencyFormatter';
-
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../features/products/cartSlice.js';
 const Product = ({ product }) => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const handleAddToCart = (product) => {
+        dispatch(addToCart(product));
+        navigate('/cart');
+    };
     return (
         <div className="product w-80 overflow-hidden shadow-lg bg-white">
             <div className="product-img h-80 overflow-hidden flex justify-center items-center">
@@ -19,7 +27,10 @@ const Product = ({ product }) => {
                     <p className="product-price text-xl text-rose-500">
                         {currencyFormatter(product.price)}
                     </p>
-                    <button className="add-to-cart-btn bg-gray-700 text-gray-50 px-5 py-2 uppercase tracking-widest font-medium hover:bg-cyan-500 duration-300">
+                    <button
+                        onClick={() => handleAddToCart(product)}
+                        className="add-to-cart-btn bg-gray-700 text-gray-50 px-5 py-2 uppercase tracking-widest font-medium hover:bg-cyan-500 duration-300"
+                    >
                         Add to cart
                     </button>
                 </div>
